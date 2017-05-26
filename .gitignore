@@ -1,0 +1,18 @@
+# folders
+
+bin
+obj
+packages
+.vs
+
+src/BethanysPieShop/wwwroot/lib
+
+# files
+
+*.user
+*.suo
+
+# specific files
+
+project.lock.json
+
