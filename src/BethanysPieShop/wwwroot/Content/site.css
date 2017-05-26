@@ -7,9 +7,11 @@
 
 body {
     padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
-    background-image: url('/images/pattern.png');
-    background-repeat: repeat;
-    font-family: 'Source Sans Pro', sans-serif;
+    background-image: url('/images/pattern11.jpg');
+    background-repeat: no-repeat;
+    background-size: 2560px 1440px;
+    /*3840 x 2160*/
+    /*2560 x 1440*/ font-family: 'Source Sans Pro', sans-serif;
 }
 
 
@@ -62,9 +64,9 @@ footer {
 }
 
 .navbar-inverse {
-    background-color: #a593c2;
+    background-color: #ffd800
+    /*#a593c2*/;
     border-color: #a593c2;
-  
 }
 
 .nav.navbar-nav.navbar-right li a {
@@ -92,12 +94,12 @@ footer {
 
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open .dropdown-toggle.btn-primary {
 
-  background-color: #fcaeae !important;
-  border-color: #fba1a1 !important;
+  background-color: #f5fe68 !important;
+  border-color: #d2c078 !important;
  }
-
-.btn
-{
-  background-color: #fcaeae !important;
-  border-color: #fba1a1 !important;
+/*#fba1a1*/ 
+.btn {
+    background-color: #ffd800
+    /*#fcaeae*/ !important;
+    border-color: #cea83d !important;
 }

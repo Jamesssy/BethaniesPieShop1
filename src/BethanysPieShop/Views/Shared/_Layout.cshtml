@@ -28,6 +28,8 @@
                     @await Component.InvokeAsync("CategoryMenu")
                     <li><a asp-controller="Contact" asp-action="Index">Contact us</a></li>
                     @await Component.InvokeAsync("ShoppingCartSummary")
+                    <li><a asp-controller="History" asp-action="Index">Pie's History</a></li>
+                    <li><a asp-controller="Admin" asp-action="Index">Admin</a></li>
                 </ul>
                 @await Html.PartialAsync("LoginPartial")
             </div>
@@ -38,7 +40,7 @@
         <div class="row">
             <div class="col-md-3">
                 <p class="lead">
-                    <img class="img-responsive" alt="Bethany's Pie Shop'" src="~/Images/bethanylogo.png" />
+                    <img class="img-responsive" alt="Bethany's Pie Shop'" src="~/Images/pielogo.png" />
                 </p>
             </div>
             <div class="col-md-9">

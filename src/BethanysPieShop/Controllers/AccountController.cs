@@ -57,7 +57,7 @@ namespace BethanysPieShop.Controllers
             return View(loginViewModel);
         }
 
-
+        [AllowAnonymous]
         public IActionResult Register()
         {
             return View();
@@ -65,6 +65,7 @@ namespace BethanysPieShop.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [AllowAnonymous]
         public async Task<IActionResult> Register(LoginViewModel loginViewModel)
         {
             if (ModelState.IsValid)

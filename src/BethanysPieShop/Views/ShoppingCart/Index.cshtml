@@ -30,6 +30,17 @@
             <td class="text-right">
                 @Model.ShoppingCartTotal.ToString("c")
             </td>
+            <td class="text-right">
+                <form asp-area="" asp-controller="Order" asp-action="Checkout" id="checkoutForm"
+                      method="post" class="navbar-left">
+                    <ul class="nav navbar-nav navbar-left">
+                        <li><a asp-action="Checkout" asp-controller="Order">Checkout</a></li>
+                    </ul>
+                </form>
+            </td>
+            
         </tr>
     </tfoot>
+  
+
 </table>
