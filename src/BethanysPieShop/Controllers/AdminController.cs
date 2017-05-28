@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using BethanysPieShop.Models;
+using System.Data.SqlClient;
+using Microsoft.Extensions.Configuration;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -71,5 +73,45 @@ namespace BethanysPieShop.Controllers
             //return View(pie);
             //}
         }
+
+
+        //private IConfigurationRoot _configurationRoot;
+
+        
+
+        //private void LoadSubjects()
+        //{
+
+        //    Category subjects = new Category();
+
+        //    using (SqlConnection con = new SqlConnection(_configurationRoot.GetConnectionString("DefaultConnection")))
+        //    {
+
+        //        try
+        //        {
+        //            SqlDataAdapter adapter = new SqlDataAdapter("SELECT SubjectID, SubjectName FROM Students.dbo.Subjects", con);
+        //            adapter.Fill(subjects);
+
+        //            ddlSubject.DataSource = subjects;
+        //            ddlSubject.DataTextField = "SubjectNamne";
+        //            ddlSubject.DataValueField = "SubjectID";
+        //            ddlSubject.DataBind();
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            // Handle the error
+        //        }
+
+        //    }
+
+        //    // Add the initial item - you can add this even if the options from the
+        //    // db were not successfully loaded
+        //    ddlSubject.Items.Insert(0, new ListItem("<Select Subject>", "0"));
+
+        //}
+
+
+
+
     }
 }

@@ -5,6 +5,8 @@
 <form asp-action="Create" method="post">
     Pie Name<input name="PieName" />
     @*Pie Category<input name="PieCategory" />*@
+
+
     <div>
         <label>Category:</label><br />
         <asp:DropDownList ID="CategoryId" runat="server" Width="200px">
@@ -17,8 +19,55 @@
             <asp:ListItem Text="Blueberry" Value="4"></asp:ListItem>
         </asp:DropDownList>
     </div>
+
+    Category2
+    <div>
+        <asp:DropDownList ID="Category" runat="server" DataSourceID="SqlDataSource1"
+                             DataTextField="CategoryName" DataValueField="CategoryId" AppendDataBoundItems="true">
+            <asp:ListItem Text="Please select" Value="" />
+        </asp:DropDownList>
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="Server=(localdb)\\MSSQLLocalDB;Database=BethanysPieShop2;Trusted_Connection=True;MultipleActiveResultSets=true"
+                              SelectCommand="SELECT CategoryName FROM Category">
+        </asp:SqlDataSource>
+    </div>
+
+
     <input type="submit" value="Ok" />
 </form>
+
+
+
+
+
+
+@*<asp:GridView ID="gvCategory" runat="server" DataKeyNames="CategoryID" OnRowDataBound="GridView_RowDataBound" OnDataBound="GridView_DataBound">
+    <Columns>
+        <asp:TemplateField HeaderText="Category">
+            <ItemTemplate>
+                <asp:DropDownList ID="ddlCategory" runat="server" DataSourceID="sdsCategory" DataTextField="CategoryName" DataValueField="CategoryId">
+                </asp:DropDownList>
+                <asp:SqlDataSource ID="sdsCategory" runat="server"
+                                   SelectCommand="SELECT CategoryId,CategoryName FROM Category"></asp:SqlDataSource>
+            </ItemTemplate>
+        </asp:TemplateField>
+    </Columns>
+</asp:GridView>*@
+
+
+
+
+
+
+@*<asp:DropDownList ID="ddlSubject" runat="server" AppendDataBoundItems="true">
+    <asp:ListItem Text="<Select Subject>" Value="0" />
+</asp:DropDownList>*@
+
+
+
+
+
+
+
 
 @*<form asp-action="Create">
     <div class="form-horizontal">
