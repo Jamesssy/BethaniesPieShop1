@@ -15,6 +15,8 @@ namespace BethanysPieShop.Models
             _appDbContext = appDbContext;
         }
 
+       
+
         public IEnumerable<Pie> Pies
         {
             get
@@ -31,9 +33,18 @@ namespace BethanysPieShop.Models
             }
         }
 
+
         public Pie GetPieById(int pieId)
         {
             return _appDbContext.Pies.FirstOrDefault(p => p.PieId == pieId);
         }
+
+        
+        public void AddPie(Pie pie)
+        {
+             _appDbContext.Pies.Add(pie);
+            
+        }
+
     }
 }

@@ -1,0 +1,44 @@
+﻿@model Category
+
+<h2>Admin Page</h2>
+
+<form asp-action="Create" method="post">
+    Pie Name<input name="PieName" />
+    @*Pie Category<input name="PieCategory" />*@
+    <div>
+        <label>Category:</label><br />
+        <asp:DropDownList ID="CategoryId" runat="server" Width="200px">
+            <asp:ListItem Text="Select Category" Value="0"></asp:ListItem>
+            
+                <asp:ListItem Text="Cheese Cakes" Value="1"></asp:ListItem>
+           
+            <asp:ListItem Text="Fruit Cakes" Value="2"></asp:ListItem>
+            <asp:ListItem Text="Seasonal Pies" Value="3"></asp:ListItem>
+            <asp:ListItem Text="Blueberry" Value="4"></asp:ListItem>
+        </asp:DropDownList>
+    </div>
+    <input type="submit" value="Ok" />
+</form>
+
+@*<form asp-action="Create">
+    <div class="form-horizontal">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="Pie" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Pie" class="form-control" />
+                <span asp-validation-for="Pie" class="text-danger"></span>
+            </div>
+            <label asp-for="Category" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Category" class="form-control" />
+                <span asp-validation-for="Category" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Create Pie" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+    </div>
+</form>*@

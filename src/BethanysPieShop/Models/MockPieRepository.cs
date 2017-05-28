@@ -25,6 +25,12 @@ namespace BethanysPieShop.Models
         }
 
         public IEnumerable<Pie> PiesOfTheWeek { get; }
+
+        public void AddPie(Pie pie)
+        {
+            throw new NotImplementedException();
+        }
+
         public Pie GetPieById(int pieId)
         {
             throw new System.NotImplementedException();
