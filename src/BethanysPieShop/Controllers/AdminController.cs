@@ -61,6 +61,37 @@ namespace BethanysPieShop.Controllers
         }
 
 
+        public IActionResult ChangePiePrice()
+            {
+            ViewData["PieId"] = new SelectList(_context.Pies.OrderBy(c => c.Name), "PieId", "Name");
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult ChangePiePrice([Bind("Price,PieId")] ChangePiePriceViewModel piePriceViewModel)
+        {
+            if (ModelState.IsValid)
+            {
+                //var pie = new Pie();
+                var pie = _context.Pies.FirstOrDefault(p => p.PieId == piePriceViewModel.PieId);
+                var oldPrice = pie.Price;
+                pie.Price = piePriceViewModel.Price;
+
+                //pie.PieId = piePriceViewModel.PieId;
+
+
+                _context.Pies.Update(pie);
+                _context.SaveChanges();
+
+                return Ok($"Pie with name: '{pie.Name}' Changed to price: '{piePriceViewModel.Price}' Old price was {oldPrice}");
+                //return RedirectToAction("Details", "Pie", pie.PieId);
+            }
+            ViewData["PieId"] = new SelectList(_context.Pies.OrderBy(r => r.Name), "PieId", "Name", piePriceViewModel.PieId);
+
+            return View(piePriceViewModel);
+        }
+
+
 
 
 
