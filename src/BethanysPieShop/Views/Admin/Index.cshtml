@@ -1,15 +1,17 @@
 ﻿@model Category
 
 <h2>Admin Page</h2>
-
+<a asp-action="CreateDropDown">Till Drop down list Category</a>
 <form asp-action="Create" method="post">
     Pie Name<input name="PieName" />
-    @*Pie Category<input name="PieCategory" />*@
+    Add new Pie Category<input name="PieCategory" />
 
 
-    <div>
-        <label>Category:</label><br />
-        <asp:DropDownList ID="CategoryId" runat="server" Width="200px">
+
+
+    @*<div>
+        <label>Categories:</label><br />
+        @*<asp:DropDownList ID="CategoryId" runat="server" Width="200px">
             <asp:ListItem Text="Select Category" Value="0"></asp:ListItem>
             
                 <asp:ListItem Text="Cheese Cakes" Value="1"></asp:ListItem>
@@ -17,7 +19,12 @@
             <asp:ListItem Text="Fruit Cakes" Value="2"></asp:ListItem>
             <asp:ListItem Text="Seasonal Pies" Value="3"></asp:ListItem>
             <asp:ListItem Text="Blueberry" Value="4"></asp:ListItem>
-        </asp:DropDownList>
+        </asp:DropDownList>*@
+
+        @*<select>
+            <option value="value1">Pie1</option>
+            <option value="value1">Pie2</option>
+        </select>
     </div>
 
     Category2
@@ -29,7 +36,7 @@
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="Server=(localdb)\\MSSQLLocalDB;Database=BethanysPieShop2;Trusted_Connection=True;MultipleActiveResultSets=true"
                               SelectCommand="SELECT CategoryName FROM Category">
         </asp:SqlDataSource>
-    </div>
+    </div>*@
 
 
     <input type="submit" value="Ok" />

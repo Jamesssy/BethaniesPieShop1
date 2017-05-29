@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Mvc;
 using BethanysPieShop.Models;
 using System.Data.SqlClient;
 using Microsoft.Extensions.Configuration;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using BethanysPieShop.ViewModels;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -27,6 +29,41 @@ namespace BethanysPieShop.Controllers
         {
             return View();
         }
+
+
+
+        public IActionResult CreateDropDown()
+        {
+            ViewData["CategoryId"] = new SelectList(_context.Categories.OrderBy(c => c.CategoryName), "CategoryId", "CategoryName");
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult CreateDropDown([Bind("Name,CategoryId")] AddPieDropDownListViewModel pieViewModel)
+        {
+            if (ModelState.IsValid)
+            {
+                var pie = new Pie();
+                pie.Name = pieViewModel.Name.Trim();
+                
+                pie.CategoryId = pieViewModel.CategoryId;
+                
+
+                _context.Pies.Add(pie);
+                _context.SaveChanges();
+
+                return Ok($"Pie with name: '{pieViewModel.Name.Trim()}' in category: '{pieViewModel.CategoryId}', Where added into the database.");
+                //return RedirectToAction("Details", "Pie", pie.PieId);
+            }
+            ViewData["CategoryId"] = new SelectList(_context.Categories.OrderBy(r => r.CategoryName), "CategoryId", "CategoryName", pieViewModel.CategoryId);
+
+            return View(pieViewModel);
+        }
+
+
+
+
+
         public IActionResult Create()
         {
             return View();
